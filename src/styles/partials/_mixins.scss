@@ -1,0 +1,14 @@
+@use "./variables" as *;
+
+@mixin btnStyle{
+    cursor: pointer;
+    display: inline-block;
+    margin-inline: 0.1rem;
+    margin-block: 1rem;
+    padding: 0.5rem 1rem;
+    border:0.125rem solid $secondary-gray;
+    transition: 0.4s ease;
+    &:hover{
+        border:0.125rem solid $Primary-Black;
+    }
+}

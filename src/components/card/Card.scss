@@ -1,0 +1,60 @@
+@use "../../styles/partials/variables" as *;
+
+.card{
+    background-color: #fff;
+    border: 0.125rem solid $secondary-gray;
+    width: 12.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.4s ease;
+    text-decoration: none;
+    margin: 0.5rem;
+    &:hover{
+        border: 0.125rem solid $secondary-gray;
+        box-shadow: 6px 8px 13px 0px rgba(178,177,177,0.75);
+        -webkit-box-shadow: 6px 8px 13px 0px rgba(178,177,177,0.75);
+        -moz-box-shadow: 6px 8px 13px 0px rgba(178,177,177,0.75);
+    }
+    &__img-container{
+        height: 12.5rem;
+        width: 12.5rem;
+    }
+    &__img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__body{
+        padding-block: 0.5rem;
+        text-align: center;
+    }
+    &__brand{
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #000;
+    }
+    &__title{
+        width: 200px;
+        color: #000;
+        margin-bottom: 0.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+    &__desc{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline:0.5rem;
+    }
+    &__color{
+        color: #000;
+    }
+    &__price{
+        font-size: 1.2rem;
+        color: $primary-gray;
+    }
+}
