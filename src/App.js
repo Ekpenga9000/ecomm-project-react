@@ -5,16 +5,18 @@ import HomePage from './pages/HomePage/HomePage';
 import ProductsDetails from './pages/ProductsDetailsPage/ProductsDetails';
 import Nav from './components/NavBar/Nav';
 import Discount from './pages/DiscountPage/Discount';
+import Cart from "./components/cart/Cart";
 
 function App() {
-  const [cartNumber, setCartNumber] = useState([]);
+  const [cartArray, setCartArray] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  // const []
 
   function incrementCartNumber(cartObj) {
-    let cart = cartNumber;
+    let cart = cartArray;
     cart.push(cartObj);
     
-    setCartNumber(cart);
+    setCartArray(cart);
     
     let count = 0;
     for (let i = 0; i < cartNumber.length; i++){
@@ -29,7 +31,8 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/> }/>  
         <Route path='/products/:productid' element={<ProductsDetails incrementCartNumber={ incrementCartNumber } /> }/>  
-        <Route path='/discounts' element={<Discount/> }/>  
+        <Route path='/discounts' element={<Discount />} /> 
+        <Route path='/cart' element={<Cart cartItems={cartArray} />} /> 
       </Routes>
     </BrowserRouter>
   );
